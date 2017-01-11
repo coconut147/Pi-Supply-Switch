@@ -10,8 +10,8 @@ if [ ! $? = 0 ]; then
    exit 1
 else
    mkdir /opt/piswitch
-   cp Pi-Supply-Switch/softshut.py /opt/piswitch
-   cp Pi-Supply-Switch/piswitch.service /etc/systemd/system
+   cp softshut.py /opt/piswitch
+   cp piswitch.service /etc/systemd/system
 
    systemctl enable /etc/systemd/system/piswitch.service
    systemctl start piswitch.service
