@@ -1,5 +1,13 @@
 # Pi-Supply-Switch
+
+This is a fork of the original Pi Supply Switch project by PiSupply.
+
+This branch is used on my RetroPi installation.
+
+
 Pi Supply Switch On/Off Switch for Raspberry Pi - https://www.pi-supply.com/product/pi-supply-raspberry-pi-power-switch/
+
+
 
 #Installation
 1. Login via SSH or via the console.
