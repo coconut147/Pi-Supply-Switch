@@ -8,12 +8,18 @@ from time import sleep
 def Shutdown():
 
  print "Will shutdown right now !"
- GPIO.output(PinEight,0) # Bring down PinEight so that the capacitor can discharge an remove power to the Pi
- GPIO.cleanup() # Cleanup of GPIO usage
- call('poweroff', shell=False) # Initiate OS Poweroff
+ call('sudo shutdown +1 "Power button has been pressed. System will shutdown in 1 minute!"', shell=True) # Initiate OS Poweroff
  return
 
 
+
+def LedBlink():
+ while(True):
+  sleep(0.5)
+  GPIO.output(PinEight,0) # switch off
+  sleep(0.05)
+  GPIO.output(PinEight,1); # switch on
+ 
 
 
 # Map pin seven and eight on the Pi Switch PCB to chosen pins on the Raspberry Pi header
@@ -36,6 +42,9 @@ while (GPIO.input(PinSeven) == False): # While button not pressed
 	sleep(0.1); # Sleep for 100ms
 
 
+print "Button press detected"
+
 Shutdown()
+LedBlink()
 
 
